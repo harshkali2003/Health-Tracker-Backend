@@ -1,6 +1,8 @@
 const express = require("express");
 const cors = require("cors");
+require("dotenv").config();
 const modelOf = require("../Models/model");
+
 
 const app = express();
 
@@ -68,4 +70,4 @@ app.get('/search/:key' , async(req , resp)=>{
     resp.send(data)
 })
 
-app.listen(5000);
+app.listen(process.env.PORT);
