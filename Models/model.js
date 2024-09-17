@@ -11,14 +11,6 @@ const productSchema = new mongoose.Schema({
         required : true
     },
     bloodPressure : {
-        // systolic: {
-        //     type: Number, 
-        //     required: true
-        //   },
-        //   diastolic: {
-        //     type: Number, 
-        //     required: true
-        //   }
         type:String,
         required:true
     },
