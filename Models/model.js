@@ -7,7 +7,7 @@ const productSchema = new mongoose.Schema({
         required: true
     },
     bodyTemperature : {
-        type : Number,
+        type : String,
         required : true
     },
     bloodPressure : {
@@ -15,7 +15,7 @@ const productSchema = new mongoose.Schema({
         required:true
     },
     heartRate : {
-        type : Number,
+        type : String,
         required: true
     }
 

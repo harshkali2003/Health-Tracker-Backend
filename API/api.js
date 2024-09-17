@@ -41,7 +41,7 @@ app.delete("/health-records/:id", async (req, resp) => {
 });
 
 app.put("/health-records/:id", async (req, resp) => {
-  let data = await modelOf({ _id: req.params.id }, { $set: req.body });
+  let data = await modelOf.updateOne({ _id: req.params.id }, { $set: req.body });
   if (data) {
     console.log("Record edited successfully");
     resp.send(data);
@@ -60,13 +60,15 @@ app.get("/health-records/:id", async (req, resp) => {
 });
 
 app.get('/search/:key' , async(req , resp)=>{
-    let data = await modelOf.findOne({
+    let data = await modelOf.find({
         "$or":[
             {bodyTemperature : {$regex : req.params.key}},
             {bloodPressure : {$regex : req.params.key}},
             {heartRate  : {$regex : req.params.key}}
         ]
     })
+    console.log("Searched");
+    
     resp.send(data)
 })
 
